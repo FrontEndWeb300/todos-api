@@ -13,10 +13,10 @@ export class TodosService {
   constructor(@InjectModel(Todo.name) private todoModel: Model<Todo>) { }
 
   async markComplete(entity: TodoResponse): Promise<void> {
-    await this.todoModel.updateOne({ id: entity.id }, { completed: true })
+    await this.todoModel.updateOne({ _id: entity.id }, { completed: true })
   }
   async markIncomplete(entity: TodoResponse): Promise<void> {
-    await this.todoModel.updateOne({ id: entity.id }, { completed: false })
+    await this.todoModel.updateOne({ _id: entity.id }, { completed: false })
   }
 
   async updateProject(id: string, project: string): Promise<void> {
