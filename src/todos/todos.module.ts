@@ -4,6 +4,8 @@ import { Todo, TodoSchema } from 'src/schemas/todo';
 import { TodosService } from './todos.service';
 import { TodosController } from './todos.controller';
 import { Project, ProjectSchema } from 'src/schemas/project';
+import { ProjectsController } from './projects.controller';
+import { ProjectsService } from './projects.service';
 // import 'src/profiles/todo.profile';
 
 @Module({
@@ -21,7 +23,7 @@ import { Project, ProjectSchema } from 'src/schemas/project';
 
 
     ],
-    providers: [TodosService],
-    controllers: [TodosController]
+    providers: [TodosService, ProjectsService],
+    controllers: [TodosController, ProjectsController]
 })
 export class TodosModule { }

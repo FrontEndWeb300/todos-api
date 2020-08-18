@@ -9,4 +9,9 @@ export class Project extends Document {
 
 }
 
-export const ProjectSchema = SchemaFactory.createForClass(Project);
+const _ProjectSchema = SchemaFactory.createForClass(Project);
+_ProjectSchema.set('toJSON', {
+    virtuals: true
+});
+
+export const ProjectSchema = _ProjectSchema;

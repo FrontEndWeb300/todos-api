@@ -25,12 +25,16 @@
     "@nestjs/core": "^7.0.0",
     "@nestjs/mongoose": "^7.0.2",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/swagger": "^4.5.12",
+    "@types/lodash": "^4.14.159",
     "@types/mongoose": "^5.7.36",
+    "lodash": "^4.17.20",
     "mongoose": "^5.10.0",
     "nestjsx-automapper": "^3.0.23",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
