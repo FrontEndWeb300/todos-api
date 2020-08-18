@@ -35,12 +35,12 @@ export class TodosController {
 
     @Put("/:id/project")
     async assignProject(@Param() id: string, @Body() project: Update): Promise<void> {
-        await this.service.updateProject(id, project.value);
+        await this.service.updateProject(id['id'], project.value);
     }
 
     @Put("/:id/duedate")
     async assignDueDate(@Param() id: string, @Body() dueDate: Update): Promise<void> {
-        await this.service.updateDueDate(id, dueDate.value);
+        await this.service.updateDueDate(id['id'], dueDate.value);
     }
 
 }

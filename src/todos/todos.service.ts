@@ -20,12 +20,12 @@ export class TodosService {
   }
 
   async updateProject(id: string, project: string): Promise<void> {
-    await this.todoModel.findByIdAndUpdate(id['id'], { project: project })
+    await this.todoModel.findByIdAndUpdate(id, { project: project })
 
   }
 
   async updateDueDate(id: string, dueDate: string): Promise<void> {
-    await this.todoModel.updateOne({ _id: id['id'] }, { dueDate: dueDate })
+    await this.todoModel.updateOne({ _id: id }, { dueDate: dueDate })
   }
   async create(createTodoDto: CreateTodoDto): Promise<TodoResponse> {
     const createdTodo = new this.todoModel(createTodoDto);
