@@ -34,11 +34,13 @@ export class TodosController {
     }
 
     @Put("/:id/project")
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async assignProject(@Param() params: any, @Body() project: Update): Promise<void> {
         await this.service.updateProject(params.id, project.value);
     }
 
     @Put("/:id/duedate")
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async assignDueDate(@Param() params: any, @Body() dueDate: Update): Promise<void> {
         await this.service.updateDueDate(params.id, dueDate.value);
     }
