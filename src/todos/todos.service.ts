@@ -27,8 +27,8 @@ export class TodosService {
   async updateDueDate(id: string, dueDate: string): Promise<void> {
     await this.todoModel.updateOne({ _id: id }, { dueDate: dueDate })
   }
-  async create(createTodoDto: CreateTodoDto): Promise<TodoResponse> {
-    const createdTodo = new this.todoModel(createTodoDto);
+  async create(createTodoDto: CreateTodoDto, addedBy: string): Promise<TodoResponse> {
+    const createdTodo = new this.todoModel({ ...createTodoDto, addedBy });
     const todo = await createdTodo.save();
 
     return this.map(todo);
@@ -41,7 +41,7 @@ export class TodosService {
   }
 
   private map(todo: Todo): TodoResponse {
-    const result = pick(todo, ['id', 'name', 'completed', 'dueDate', 'project']);
+    const result = pick(todo, ['id', 'name', 'completed', 'dueDate', 'project', 'addedBy']);
     return result as TodoResponse;
   }
 }

@@ -14,6 +14,9 @@ export class Todo extends Document {
 
     @Prop()
     completed: boolean;
+
+    @Prop()
+    addedBy: string
 }
 
 export const TodoSchema = SchemaFactory.createForClass(Todo);
